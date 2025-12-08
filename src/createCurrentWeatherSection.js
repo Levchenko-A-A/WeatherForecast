@@ -7,13 +7,10 @@ export function createCurrentWeatherSection() {
     location.className = 'location';
 
     const cityName = document.createElement('h2');
-    cityName.textContent = 'Москва';
-    cityName.id = 'city-name';
-    cityName.cityName = 'city-name';
+    cityName.className = 'city-name';
 
     const currentDate = document.createElement('div');
     currentDate.className = 'date';
-    currentDate.id = 'current-date';
 
     location.append(cityName, currentDate);
 
@@ -21,13 +18,9 @@ export function createCurrentWeatherSection() {
     weatherMain.className = 'wiather-main';
     const weatherInfo = document.createElement('div');
     const temperature = document.createElement('div');
-    temperature.textContent = '25°C';
     temperature.className = 'temperature';
-    temperature.id = 'temperature';
     const description = document.createElement('div');
-    description.textContent = 'Солнечно';
     description.className = 'description';
-    description.id = 'description';
 
     weatherInfo.append(temperature, description);
     weatherMain.append(weatherInfo);
@@ -35,10 +28,10 @@ export function createCurrentWeatherSection() {
     const weatherDetails = document.createElement('div');
     weatherDetails.className = 'weather-details';
     const details = [
-        {label: 'Влажность', value: '65%', id: 'humidity'},
-        {label: 'Ветер', value: '5 м/с', id: 'wind-speed'},
-        {label: 'Давление', value: '1013 hPa', id: 'pressure'},
-        {label: 'Восход/Закат', value: '05:30 / 21:15', id: 'sun-times'}
+        {label: 'Влажность', className: 'humidity'},
+        {label: 'Ветер', className: 'wind-speed'},
+        {label: 'Давление', className: 'pressure'},
+        {label: 'Восход/Закат', className: 'sun-times'}
     ];
     details.forEach(detail => {
         const detailElement = document.createElement('div');
@@ -47,8 +40,7 @@ export function createCurrentWeatherSection() {
         const label = document.createElement('div');
         label.textContent = detail.label;
         const value = document.createElement('div');
-        value.textContent = detail.value;
-        value.id = detail.id;
+        value.className = detail.className;
 
         textContainer.append(label, value);
         detailElement.append(textContainer);

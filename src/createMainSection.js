@@ -12,7 +12,7 @@ export function createMainSection (el) {
     const cityInput = document.createElement('input');
     cityInput.type = 'text';
     cityInput.className = 'city-input';
-    cityInput.placeholder = 'Введите название города...';
+    cityInput.placeholder = 'Введите название города... (например Москва)';
     
     const searchButton = document.createElement('button');
     searchButton.className = 'search-btn';
@@ -26,7 +26,7 @@ export function createMainSection (el) {
     weatherContainer.className = 'weather-container';
     const loadingElement = document.createElement('div');
     loadingElement.className = 'loading';
-    loadingElement.textContent = 'Загрузка данных о погоде...';
+    // loadingElement.textContent = 'Загрузка данных о погоде...';
 
     const currentWeather = createCurrentWeatherSection();
 
