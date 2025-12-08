@@ -97,10 +97,6 @@ button:hover {
     font-weight: bold;
 }
 
-.weather-icon {
-    font-size: 5rem;
-}
-
 .description {
     font-size: 1.5rem;
     text-transform: capitalize;
@@ -128,13 +124,5 @@ button:hover {
 .loading {
     text-align: center;
     font-size: 1.2rem;
-    margin: 20px 0;
-}
-
-.error {
-    background: rgba(214, 48, 49, 0.8);
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
     margin: 20px 0;
 }
