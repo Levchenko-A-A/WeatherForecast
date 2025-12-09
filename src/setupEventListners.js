@@ -24,6 +24,7 @@ export function setupEventListners() {
   const handleSearch = async () => {
     const city = cityInput.value.trim();
     if (!city || city.toLowerCase() !== "москва") {
+      cityInput.value = "";
       currentWeather.style.display = "none";
       alert("Введите название города");
       return;
