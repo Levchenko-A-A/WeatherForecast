@@ -4,8 +4,21 @@ export function setupEventListners() {
   const loadingElement = document.querySelector(".loading");
   const currentWeather = document.querySelector(".current-weather");
 
-  function featchDelay(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+  function featchDelay() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const mockWeatherData = {
+                temperature: -2,
+                description: 'Небольшой снег',
+                humidity: 85,
+                windSpeed: 3,
+                pressure: 1013,
+                sunrise: '08:45',
+                sunset: '16:20',
+            };
+            resolve(mockWeatherData);
+        }, 5000);
+    });
   }
 
   const handleSearch = async () => {
@@ -17,8 +30,8 @@ export function setupEventListners() {
     }
 
     showLoading(loadingElement, currentWeather);
-    await featchDelay(5000);
-    updateWeather(city);
+    const weatherData = await featchDelay();
+    updateWeather(city, weatherData);
     showWeather(loadingElement, currentWeather);
   };
 
@@ -48,7 +61,7 @@ export function setupEventListners() {
     cityInput.value = "";
   }
 
-  function updateWeather(city) {
+  function updateWeather(city, weatherData) {
     const cityName = document.querySelector(".city-name");
     const currentDate = document.querySelector(".date");
     const temperature = document.querySelector(".temperature");
@@ -61,11 +74,11 @@ export function setupEventListners() {
     const now = new Date();
     const option = { weekday: "long", day: "numeric", month: "long" };
     currentDate.textContent = now.toLocaleDateString("ru-RU", option);
-    temperature.textContent = "-2°C";
-    description.textContent = "Небольшой снег";
-    humidity.textContent = "85%";
-    windSpeed.textContent = "3 м/с";
-    pressure.textContent = "1013 hPa";
-    sunTimes.textContent = "6:30 / 20:20";
+    temperature.textContent = `${weatherData.temperature}°C`;
+    description.textContent = weatherData.description;
+    humidity.textContent = `${weatherData.humidity}%`;
+    windSpeed.textContent = `${weatherData.windSpeed}м/с`;
+    pressure.textContent = `${weatherData.pressure}hPa`;
+    sunTimes.textContent = `${weatherData.sunrise} / ${weatherData.sunset}`;
   }
 }
