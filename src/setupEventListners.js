@@ -6,18 +6,18 @@ export function setupEventListners() {
 
   function featchDelay() {
     return new Promise((resolve) => {
-        setTimeout(() => {
-            const mockWeatherData = {
-                temperature: -2,
-                description: 'Небольшой снег',
-                humidity: 85,
-                windSpeed: 3,
-                pressure: 1013,
-                sunrise: '08:45',
-                sunset: '16:20',
-            };
-            resolve(mockWeatherData);
-        }, 5000);
+      setTimeout(() => {
+        const mockWeatherData = {
+          temperature: -2,
+          description: "Небольшой снег",
+          humidity: 85,
+          windSpeed: 3,
+          pressure: 1013,
+          sunrise: "08:45",
+          sunset: "16:20",
+        };
+        resolve(mockWeatherData);
+      }, 5000);
     });
   }
 
