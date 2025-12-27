@@ -20,6 +20,7 @@ body {
 header {
   text-align: center;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 h1 {
@@ -30,22 +31,25 @@ h1 {
 
 .search-container {
   display: flex;
-  margin: 20px 0;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 25px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  justify-content: center;
 }
 
 input {
   flex: 1;
   padding: 12px 15px;
   border: none;
-  border-radius: 25px 0 0 25px;
   font-size: 1rem;
   outline: none;
+  min-width: 0;
 }
 
-button {
+.search-btn {
   background: #e17055;
   color: white;
   border: none;
@@ -57,6 +61,26 @@ button {
 }
 
 button:hover {
+  background: #d63031;
+}
+
+.location-btn {
+  background: #00b894;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition:
+    background 0,
+    3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.location-btn:hover {
   background: #d63031;
 }
 
