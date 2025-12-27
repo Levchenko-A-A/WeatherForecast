@@ -1,8 +1,8 @@
 import { createMainSection } from "./createMainSection";
-import { setupEventListners } from "./setupEventListners";
+import { setupEventListners } from "./setupEventListeners";
 import "./runApp.css";
 
 export function runApp(el) {
-  createMainSection(el);
-  setupEventListners();
+  const element = createMainSection(el);
+  setupEventListners(element);
 }
